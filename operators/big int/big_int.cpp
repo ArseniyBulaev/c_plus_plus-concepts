@@ -15,6 +15,7 @@ BigInt::BigInt(long long n){
 BigInt::BigInt(const BigInt & big_int):numbers(big_int.numbers), is_positive(big_int.is_positive){}
 
 BigInt::BigInt(const std::string & str){
+    // TO DO: fix missing sign
     numbers.reserve(str.size());
     for(size_t i = str.size() - 1; i >= 0; --i){
         if(isdigit(str[i])){
@@ -31,6 +32,7 @@ BigInt::BigInt(const std::string & str){
 
 #pragma region friend
 std::ostream & operator << (std::ostream & os, const BigInt & big_int){
+    // TO DO: fix missing sign
     for(size_t i = big_int.numbers.size() - 1; i >= 0; --i){
         std::cout << big_int.numbers[i];
     }
