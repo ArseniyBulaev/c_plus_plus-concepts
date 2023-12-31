@@ -16,19 +16,19 @@ bool BigInt::is_number(const std::string & str){
 
 #pragma regin constructor
 BigInt::BigInt(long long n){
-    is_positive = (abs(n) == n);
+    is_negative = (abs(n) != n);
     do{
         numbers.push_back(n % 10);
         n /= 10;
     } while(n != 0);
 }
-BigInt::BigInt(const BigInt & big_int):numbers(big_int.numbers), is_positive(big_int.is_positive){}
+BigInt::BigInt(const BigInt & big_int):numbers(big_int.numbers), is_negative(big_int.is_negative){}
 
 BigInt::BigInt(const std::string & str){
     // Preallocate memory
     numbers.reserve(str.size());
     // Determine sign
-    is_positive = (str[0] != '-');
+    is_negative = (str[0] == '-');
 
     if (!is_number(str)) throw std::invalid_argument("Input value is not a number");
 
@@ -44,7 +44,7 @@ BigInt::BigInt(const std::string & str){
 
 #pragma region friend
 std::ostream & operator << (std::ostream & os, const BigInt & big_int){
-    if(!big_int.is_positive) std::cout << "-";
+    if(big_int.is_negative) std::cout << "-";
     for(size_t i = big_int.numbers.size() - 1; i >= 0; --i){
         std::cout << big_int.numbers[i];
     }

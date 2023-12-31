@@ -9,7 +9,7 @@ private:
     // Numbers in reverse order
     std::string numbers = "";
     // Sign
-    bool is_positive = true;
+    bool is_negative = true;
     // Help
     static bool is_number(const std::string & str);
 public:
