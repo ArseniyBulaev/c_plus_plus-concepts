@@ -44,7 +44,7 @@ BigInt::BigInt(const std::string & str){
 
 #pragma region friend
 std::ostream & operator << (std::ostream & os, const BigInt & big_int){
-    // TO DO: fix missing sign
+    if(!big_int.is_positive) std::cout << "-";
     for(size_t i = big_int.numbers.size() - 1; i >= 0; --i){
         std::cout << big_int.numbers[i];
     }
