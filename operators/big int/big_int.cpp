@@ -53,7 +53,12 @@ std::ostream & operator << (std::ostream & os, const BigInt & big_int){
 }
 
 std::istream & operator >> (std::istream & is, BigInt & big_int){
-
+    std::string str;
+    std::cin >> str;
+    // Determine sign
+    big_int.is_negative = (str[0] == '-');
+    // Construct
+    big_int.numbers = BigInt::construct_from(str);
 }
 
 #pragma endregion friend
