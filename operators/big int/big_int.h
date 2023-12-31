@@ -12,6 +12,7 @@ private:
     bool is_negative = true;
     // Help
     static bool is_number(const std::string & str);
+    static std::string construct_from(const std::string & str);
 public:
     // Constructor
     BigInt(long long n);

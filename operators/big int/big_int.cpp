@@ -13,6 +13,16 @@ bool BigInt::is_number(const std::string & str){
     return true;
 }
 
+std::string BigInt::construct_from(const std::string & str){
+    if (!is_number(str)) throw std::invalid_argument("Input value is not a number");
+    std::string numbers = "";
+    // Preallocate memory
+    numbers.reserve(str.size());
+    // Copy in reverse order
+    std::copy_backward(str.begin(), str.end(), numbers.end());
+    return numbers;
+}
+
 
 #pragma regin constructor
 BigInt::BigInt(long long n){
@@ -25,18 +35,10 @@ BigInt::BigInt(long long n){
 BigInt::BigInt(const BigInt & big_int):numbers(big_int.numbers), is_negative(big_int.is_negative){}
 
 BigInt::BigInt(const std::string & str){
-    // Preallocate memory
-    numbers.reserve(str.size());
     // Determine sign
     is_negative = (str[0] == '-');
-
-    if (!is_number(str)) throw std::invalid_argument("Input value is not a number");
-
-    for(auto str_it = str.rbegin(); str_it != str.rend(); ++str_it){
-        // Here we are sure that input str is a number
-        char number = *str_it;
-        numbers.push_back(number);
-    }
+    // Construct
+    numbers = construct_from(str);
 }
 
 #pragma endregion constructor
