@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 
 
 class BigInt{
@@ -14,6 +15,10 @@ public:
     BigInt(long long n);
     BigInt(const BigInt & big_int);
     BigInt(const std::string & str);
+
+    //Friend
+    friend std::ostream & operator << (std::ostream & os, const BigInt & big_int);
+    friend std::istream & operator >> (std::istream & is, BigInt & big_int);
 
 
 };

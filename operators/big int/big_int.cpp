@@ -27,3 +27,17 @@ BigInt::BigInt(const std::string & str){
 }
 
 #pragma endregion constructor
+
+
+#pragma region friend
+std::ostream & operator << (std::ostream & os, const BigInt & big_int){
+    for(size_t i = big_int.numbers.size() - 1; i >= 0; --i){
+        std::cout << big_int.numbers[i];
+    }
+}
+
+std::istream & operator >> (std::istream & is, BigInt & big_int){
+
+}
+
+#pragma endregion friend
