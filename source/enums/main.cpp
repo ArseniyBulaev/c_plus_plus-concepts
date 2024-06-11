@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdint>
  
+ // since c++ 11
  enum class E: int8_t /* Type of enum values */ {
     // Explicit values
     White = 2,
