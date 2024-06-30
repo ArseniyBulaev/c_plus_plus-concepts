@@ -1,13 +1,18 @@
 #include <iostream>
 
 struct Granny {
+    friend int main();
+    friend struct Son;
+    friend struct Mom;
+private:
     int x = 1;
     void f() {};
 };
 
-struct Mom: protected Granny {
+struct Mom: public Granny {
+    // friend struct Son;
     int y = 2;
-    void g() {}
+    void g() {std::cout << x << std::endl; }
 };
 
 struct Son: public Mom {
@@ -17,6 +22,7 @@ struct Son: public Mom {
 
 int main(){
     Son s;
+    // std::cout << s.x << std::endl;
     std::cout << s.y << std::endl;
     s.h();
     return 0;
