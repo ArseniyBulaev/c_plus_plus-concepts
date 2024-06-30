@@ -2,18 +2,18 @@
 
 struct Base {
     int x;
-    void f() { std::cout << 1;};
+    void f(int) { std::cout << 1;};
 };
 
 struct Derived: public Base {
     int y;
-    void f() {std::cout << 2; }
+    void f(double) {std::cout << 2; }
 };
 
 
 
 int main(){
     Derived d;
-    d.f(); // 2
+    d.f(1); // 2
     return 0;
 }
