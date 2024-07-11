@@ -3,5 +3,6 @@
 
 
 void memory_info(){
-    std::cout << sizeof(Derived) << std::endl;
+    std::cout << "Derived " << sizeof(Derived) << std::endl;
+    std::cout << "EmptyDerived " << sizeof(EmptyDerived) << std::endl;
 }
