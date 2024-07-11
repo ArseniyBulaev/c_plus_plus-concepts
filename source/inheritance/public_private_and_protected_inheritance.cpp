@@ -20,10 +20,10 @@ struct Son: public Mom {
     void h() { std::cout << x << std::endl; }
 };
 
-int main(){
-    Son s;
-    // std::cout << s.x << std::endl;
-    std::cout << s.y << std::endl;
-    s.h();
-    return 0;
-}
+// int main(){
+//     Son s;
+//     // std::cout << s.x << std::endl;
+//     std::cout << s.y << std::endl;
+//     s.h();
+//     return 0;
+// }

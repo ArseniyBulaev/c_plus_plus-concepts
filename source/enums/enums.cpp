@@ -9,8 +9,8 @@
     Black = 1
  };
 
-int main(){
-    E e = E::White;
-    std::cout << static_cast<int>(e);
-    return 0;
-}
+// int main(){
+//     E e = E::White;
+//     std::cout << static_cast<int>(e);
+//     return 0;
+// }

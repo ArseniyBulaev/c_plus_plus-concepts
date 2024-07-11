@@ -14,8 +14,8 @@ private:
 };
 
 
-int main(){
-    std::vector<C> c_objects = {1,2,3,4};
-    std::for_each(c_objects.begin(), c_objects.end(), std::mem_fn(&C::print));
-    return 0;
-}
+// int main(){
+//     std::vector<C> c_objects = {1,2,3,4};
+//     std::for_each(c_objects.begin(), c_objects.end(), std::mem_fn(&C::print));
+//     return 0;
+// }

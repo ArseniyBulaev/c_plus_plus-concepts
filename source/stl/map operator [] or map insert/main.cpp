@@ -9,9 +9,9 @@ public:
 
 using std::map;
 
-int main(){
-    map<int, Widget> m;
-    m[10] = 1.25;
-    m[42] = 5;
-    return 0;
-}
+// int main(){
+//     map<int, Widget> m;
+//     m[10] = 1.25;
+//     m[42] = 5;
+//     return 0;
+// }
