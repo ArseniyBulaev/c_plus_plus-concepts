@@ -1,10 +1,11 @@
 #include <iostream>
-#include "../include/inheritance/memory_layout.h"
+#include "../include/inheritance/casts.h"
+#include "../include/virtual/virtual_functions.h"
 
 using std::cout, std::endl;
 
 
 int main(){
-    memory_info();
+    virtual_functions_main();
     return 0;
 }
