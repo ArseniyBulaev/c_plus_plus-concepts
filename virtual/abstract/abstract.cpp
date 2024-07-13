@@ -1,4 +1,4 @@
-#include "../include/virtual/abstract.h"
+#include "abstract.h"
 #include <iostream>
 
 double Square::area() const

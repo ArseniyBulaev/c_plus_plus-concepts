@@ -1,1 +1,0 @@
-#include "../include/inheritance/public_private_and_protected_inheritance.h"

@@ -1,4 +1,4 @@
-#include "../include/virtual/coplicated_examples_2.h"
+#include "coplicated_examples_2.h"
 #include <iostream>
 
 void virtual_complicated_2_main()

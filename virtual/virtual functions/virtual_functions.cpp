@@ -1,4 +1,4 @@
-#include "../include/virtual/virtual_functions.h"
+#include "virtual_functions.h"
 #include <iostream>
 
 void virtual_functions_main()

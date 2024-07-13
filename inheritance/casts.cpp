@@ -1,4 +1,4 @@
-#include "../include/inheritance/casts.h"
+#include "casts.h"
 
 void f (Base b){
     std::cout << b.x << std::endl;

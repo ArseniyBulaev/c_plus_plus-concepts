@@ -1,4 +1,4 @@
-#include "../include/inheritance/memory_layout.h"
+#include "memory_layout.h"
 #include <iostream>
 
 
