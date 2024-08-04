@@ -1,0 +1,29 @@
+#!/bin/bash
+
+[ -z "$1" ] && {  ## validate one argument given
+    printf "error: insufficient input\nusage: %s filename\n" "${0##*/}"
+    exit 1    
+}
+
+# Create working dir
+mkdir -p "$1"
+cd "$1"
+mkdir "source"
+mkdir "build"
+
+# Create MakeFile
+touch "source/CMakeLists.txt"
+echo "cmake_minimum_required(VERSION 3.2)
+project(MyApp
+        LANGUAGES CXX
+)
+add_executable(myExe main.cpp)
+target_compile_options(myExe PRIVATE -Wall -Wextra -Wpedantic -Werror)" >> "source/CMakeLists.txt"
+
+# Create Main
+touch "source/main.cpp"
+echo "#include<iostream>
+
+int main() {
+	return 0;
+}" >> "source/main.cpp"
