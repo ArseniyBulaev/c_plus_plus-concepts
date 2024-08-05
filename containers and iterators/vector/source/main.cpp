@@ -51,6 +51,36 @@ struct S {
 	S(int x): x(x) {}
 };
 
+template <>
+class vector<bool> {
+	char * arr_;
+	size_t sz_;
+	size_t cap_;
+	struct BitReference {
+		char* cell;
+		uint8_t index;
+		BitReference(char * cell, uint8_t index)
+			: cell(cell), index(index) {}
+
+		BitReference operator=(bool b) {
+			if(b){
+				*cell |= (1 << index);
+			} else {
+				*cell &= ~(1 << index);
+			}
+			return *this;
+		}
+
+		operator bool() const {
+			return *cell & (1 << index);
+		}
+	};
+public:
+	BitReference operator[](size_t index) {
+		return BitReference(arr_ + index/8, index % 8);
+	}
+};
+
 int main() {
 	std::vector<S> v;
 	v.push_back(S(1));
