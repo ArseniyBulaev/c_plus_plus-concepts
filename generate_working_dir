@@ -22,7 +22,7 @@ target_compile_options(myExe PRIVATE -Wall -Wextra -Wpedantic -Werror)" >> "sour
 
 # Create Main
 touch "source/main.cpp"
-echo "#include<iostream>
+echo "#include <iostream>
 
 int main() {
 	return 0;
